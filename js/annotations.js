@@ -515,16 +515,7 @@
 			}
 
 			if (!shape && shapeOptions && inArray(shapeOptions.type, H.ALLOWED_SHAPES) !== -1) {
-				// HC sets options.fill to 'none' inside the call to rect. So storing it and will set it on the generated element
-				var fill = (shapeOptions.type === 'rect' && shapeOptions.params) ? shapeOptions.params.fill : undefined;
-
-                shape = annotation.shape = renderer[options.shape.type](shapeOptions.params);
-				
-				// Setting fill color as style of the SVG element created above
-				if(fill && shape && shape.element) {
-					shape.element.style.fill = fill;
-				}
-				
+				shape = annotation.shape = renderer[options.shape.type](shapeOptions.params);
 				shape.add(group);
 			}
 
