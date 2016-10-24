@@ -1,13 +1,11 @@
 {
-  "name": "highcharts-annotations",
-  "version": "1.3.0",
-  "homepage": "http://blacklabel.github.io/annotations/",
+  "name": "highcharts-annotations-ejp",
+  "version": "1.3.0.1",
+  "homepage": "http://eltonjude.github.io/annotations/",
   "authors": [
-    "Sebastian Bochan <sebastian@blacklabel.pl>",
-    "Paweł Fus <pawel@blacklabel.pl>",
-    "Kacper Madej <kacper@blacklabel.pl>"
+    "Elton Pereira <eltonjude@gmail.com>"
   ],
-  "description": "Highcharts plugin to add dynamic annotations to charts.",
+  "description": "Highcharts plugin to add dynamic annotations to charts. Fork of http://blacklabel.github.io/annotations/",
   "main": "annotations.js",
   "keywords": [
     "highcharts",
