@@ -693,6 +693,17 @@
 			if (this.selectionMarker) {
 				this.events.select({}, this);
 			}
+
+			var getMaxAnimationDuration = function(series) {
+				var maxDuration = 0;
+				if(isArray(series)) {
+					for(var i=0; i<series.length; ++i) {
+						var duration = series[i].options.animation ? (series[i].options.animation.duration || 0) : 0;
+						maxDuration = (duration > maxDuration) ? duration : maxDuration;
+					}
+				}
+				return maxDuration;
+			}
 			
 			if (redraw && chart.animation && defined(group.translateX) && defined(group.translateY)) {
 				group.animate({
@@ -700,7 +711,9 @@
 					translateY: y
 				});
 			} else {
-				group.translate(x, y);
+				setTimeout(function() {
+					group.translate(x, y);
+				}, getMaxAnimationDuration(chart.series));
 			}
 		},
 
